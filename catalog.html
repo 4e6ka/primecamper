@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="utf-8">
+   <title>Primecamper.ru</title>
+   <!-- SEO Meta Tags-->
+   <meta name="description" content="">
+
+   <!-- Viewport-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="stylesheet" media="screen" href="/dist/vendor/simplebar/dist/simplebar.min.css" />
+   <link rel="stylesheet" media="screen" href="/dist/vendor/tiny-slider/dist/tiny-slider.css" />
+   <link rel="stylesheet" media="screen" href="/dist/vendor/flatpickr/dist/flatpickr.min.css" />
+   <link rel="stylesheet" media="screen" href="/dist/vendor/nouislider/dist/nouislider.css" />
+
+   <link rel="stylesheet" media="screen" href="/css/theme.css">
+</head>
+
+<body>
+   <!-- модалка условие аренды -->
+   <div id="usloviya_modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">Условия аренды автодома</h4>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Минимальный срок аренды в <strong>высокий сезон</strong>:</p>
+               <p>с 25 декабря по 10 января - 10 суток;</p>
+               <p>с 01 июля по 31 августа - 10 суток;&nbsp;</p>
+               <p>с 28 апреля по 10 мая - 7 суток.</p>
+               <p>Все остальное время - 3 суток.</p>
+               <p>Арендодатель оставляет за собой право изменять минимальный срок аренды и периоды высокого сезона.</p>
+               <p>Ограничение по<strong>общему пробегу</strong>из расчета 500 км/сутки.</p>
+               <p>Возраст водителя от 23 лет, стаж вождения от 3-х лет, категория "B" (легковая).</p>
+               <p>Все автомобили застрахованы ОСАГО и КАСКО. Покупка европейской страховки возлагается на арендатора.
+               </p>
+               <p>Гарантийный депозит 62 000 рублей.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Условия аренды-->
+   <div id="zayavka_modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h4 class="modal-title">Заявка на аренду</h4>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form class="needs-validation" novalidate>
+                  <div class="mb-4">
+                     <label class="form-label mb-2" for="signin-email">Email</label>
+                     <input class="form-control" type="email" id="signin-email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="mb-3">
+                     <label for="tel-input" class="form-label">Phone</label>
+                     <input class="form-control" type="tel" id="tel-input" value="1-(770)-334-2518">
+                  </div>
+                  <button class="btn btn-dark btn-lg rounded-pill w-100" type="submit">Отправить</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <main class="page-wrapper">
+
+      <!-- меню -->
+      <header class="navbar navbar-expand-lg navbar-light fixed-top navbar-stuck">
+         <div class="container"><a class="navbar-brand me-3 me-xl-4 text-uppercase" href="">Primecamper</a>
+            <a class="btn btn-primary btn-sm rounded-pill ms-2 order-lg-3" href="">
+               <i class="fi-whatsapp me-2"></i>
+               <i class="fi-phone me-2"></i>
+               <span class="d-none d-sm-inline">+7 999 111-22-33</span>
+            </a>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+               <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+                  <!-- Demos switcher-->
+                  <li class="nav-item dropdown"><a class="nav-link" href="#">О бренде</a>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Купить</a>
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="catalog.html"><i
+                                 class="fi-car fs-base opacity-50 me-2"></i> В наличии</a></li>
+                        <li><a class="dropdown-item" href="catalog.html"><i
+                                 class="fi-car fs-base opacity-50 me-2"></i> На заказ</a></li>
+                        <hr />
+                        <li><a class="dropdown-item" href="catalog.html">Аксессуары</a></li>
+                     </ul>
+                  </li>
+
+                  <li class="nav-item"><a class="nav-link" href="#">Взять в аренду</a>
+                  </li>
+                  <li class="nav-item "><a class="nav-link" href="#">Продать</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"> <i class="fi-settings"></i> Сервис</a>
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="catalog.html">Обслуживание</a></li>
+                        <li><a class="dropdown-item" href="catalog.html">Ремонт</a></li>
+                     </ul>
+                  </li>
+
+
+
+                  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"> <i class="fi-map"></i> Кемпинги</a>
+                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Бисерово</a></li>
+                        <li><a class="dropdown-item" href="#">Бисерово 2</a></li>
+                     </ul>
+                  </li>
+
+                  <li class="nav-item dropdown"><a class="nav-link" href="#">Контакты</a></li>
+               </ul>
+            </div>
+         </div>
+      </header>
+
+      <div class="container mt-5 mb-md-4 py-5">
+         <div class="row py-md-1">
+            <!-- Filers sidebar (Offcanvas on mobile)-->
+            <div class="col-lg-3">
+
+
+               <div class="py-2 -offcanvas-lg -offcanvas-start bg-dark" id="filters-sidebar">
+                  <div class="py-2 offcanvas-header bg-transparent d-flex d-lg-none align-items-center">
+                     <h2 class="h5 text-light mb-0">Фильтр</h2>
+                     <button class="btn-close btn-close-white" type="button" data-bs-dismiss="offcanvas"
+                        data-bs-target="#filters-sidebar"></button>
+                  </div>
+
+                  <div class="py-2 offcanvas-body py-lg-5">
+
+                     <div class="toast show mb-5" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header bg-primary text-white">
+                          <i class="fi-bell me-2"></i>
+                          <span class="fw-bold me-auto">Фильтр</span>
+                          <button type="button" class="btn-close btn-close-white text-white ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body text-primary">Тут всё традционно, чекбоксы и выпадающие списки. Набор параметров опциональный, может быть любым.</div>
+                      </div>
+
+                     <div class="pb-4 mb-2">
+                        <h3 class="h6 text-light">Марка</h3>
+                        <select class="form-select form-select-light mb-2">
+                           <option value="Hymer">Hymer</option>
+                           <option value="Bürstner">Bürstner</option>
+                           <option value="Carado">Carado</option>
+                           <option value="Dethleffs">Dethleffs</option>
+                           <option value="Eriba">Eriba</option>
+                           <option value="Etrusco">Etrusco</option>
+                           <option value="Laika">Laika</option>
+                           <option value="LMC">LMC</option>
+                           <option value="Sunlight">Sunlight</option>
+                           <option value="Roller team">Roller team</option>
+                           <option value="Adria Mobil">Adria Mobil</option>
+                           <option value="Chausson">Chausson</option>
+                        </select>
+                     </div>
+                     <div class="pb-4 mb-2">
+                        <h3 class="h6 text-light pt-1">Год выпуска</h3>
+                        <div class="d-flex align-items-center">
+                           <select class="form-select form-select-light w-100">
+                              <option value="" disabled="" selected="">От</option>
+                              <option value="2021">2021</option>
+                              <option value="2020">2020</option>
+                              <option value="2019">2019</option>
+                              <option value="2018">2018</option>
+                              <option value="2017">2017</option>
+                              <option value="2016">2016</option>
+                              <option value="2015">2015</option>
+                              <option value="2014">2014</option>
+                              <option value="2013">2013</option>
+                              <option value="2012">2012</option>
+                              <option value="2011">2011</option>
+                              <option value="2010">2010</option>
+                           </select>
+                           <div class="mx-2">—</div>
+                           <select class="form-select form-select-light w-100">
+                              <option value="" disabled="">До</option>
+                              <option value="2021">2024</option>
+                              <option value="2021">2023</option>
+                              <option value="2021">2022</option>
+                              <option value="2021">2021</option>
+                              <option value="2020">2020</option>
+                              <option value="2019" selected="">2019</option>
+                              <option value="2018">2018</option>
+                              <option value="2017">2017</option>
+                              <option value="2016">2016</option>
+                              <option value="2015">2015</option>
+                              <option value="2014">2014</option>
+                              <option value="2013">2013</option>
+                              <option value="2012">2012</option>
+                              <option value="2011">2011</option>
+                              <option value="2010">2010</option>
+                           </select>
+                        </div>
+                     </div>
+
+                     <div class="pb-4 mb-2">
+                        <h3 class="h6 text-light">Тип</h3>
+                        <div class="overflow-auto" data-simplebar="init" data-simplebar-auto-hide="false"
+                           data-simplebar-inverse="" style="height: 9rem;">
+                           <div class="simplebar-wrapper" style="margin: 0px;">
+
+                              <div class="simplebar-mask">
+                                 <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                    <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                       aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;">
+                                       <div class="simplebar-content" style="padding: 0px;">
+
+
+                                          <div class="form-check form-check-light">
+                                             <input class="form-check-input" type="checkbox" id="pricep">
+                                             <label class="form-check-label fs-sm" for="pricep">Прицеп</label>
+                                          </div>
+                                          <div class="form-check form-check-light">
+                                             <input class="form-check-input" type="checkbox" id="int">
+                                             <label class="form-check-label fs-sm" for="int">Интеграл</label>
+                                          </div>
+                                          <div class="form-check form-check-light">
+                                             <input class="form-check-input" type="checkbox" id="polu">
+                                             <label class="form-check-label fs-sm" for="polu">Полуинтеграл</label>
+                                          </div>
+                                          <div class="form-check form-check-light">
+                                             <input class="form-check-input" type="checkbox" id="alk">
+                                             <label class="form-check-label fs-sm" for="alk">Альковный</label>
+                                          </div>
+                                          <div class="form-check form-check-light">
+                                             <input class="form-check-input" type="checkbox" id="4x4">
+                                             <label class="form-check-label fs-sm" for="4x4">4х4</label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+
+                        </div>
+                     </div>
+                     <div class="pb-4 mb-2">
+                        <h3 class="h6 text-light">Количество сидячих мест</h3>
+                        <select class="form-select form-select-light mb-2">
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                        </select>
+                     </div>
+                     <div class="pb-4 mb-2">
+                        <h3 class="h6 text-light">Количество спальных мест</h3>
+                        <select class="form-select form-select-light mb-2">
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                        </select>
+                     </div>
+                     <div class="pb-4 mb-2">
+
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- Каталог -->
+            <div class="col-lg-9">
+               <!-- Breadcrumb-->
+               <nav class="mb-3 pt-md-2 pt-lg-4" aria-label="Breadcrumb">
+                  <ol class="breadcrumb breadcrumb-dark">
+                     <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+                  </ol>
+               </nav>
+               <!-- Page title-->
+               <div class="d-flex align-items-center justify-content-between pb-4 mb-2">
+                  <h1 class="text-dark me-3 mb-0">Автодома в наличии</h1>
+                  <div class="text-dark"><i class="fi-car fs-lg me-2"></i><span class="align-middle">45
+                        предложений</span>
+                  </div>
+               </div>
+
+                <!-- тост -->
+       <div class="toast show mb-5" role="alert" aria-live="assertive" aria-atomic="true">
+         <div class="toast-header bg-primary text-white">
+           <i class="fi-bell me-2"></i>
+           <span class="fw-bold me-auto">Каталог</span>
+           <button type="button" class="btn-close btn-close-white text-white ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
+         </div>
+         <div class="toast-body text-primary">Небольшой каталог (до 1000 наименований) можно разместить в одной директории, а уже свойствами (бренд\тип и т.д.).</div>
+       </div>
+
+       <div class="toast show mb-5" role="alert" aria-live="assertive" aria-atomic="true">
+         <div class="toast-header bg-primary text-white">
+           <i class="fi-bell me-2"></i>
+           <span class="fw-bold me-auto">Разделы наличие \ на заказ</span>
+           <button type="button" class="btn-close btn-close-white text-white ms-2" data-bs-dismiss="toast" aria-label="Close"></button>
+         </div>
+         <div class="toast-body text-primary">На самом деле до конца не понял логики разделения именно таким способом. Вы пишете, что у изделия "в наличии" могут быть статусы: в наличии, в поставке, продан. Но если он продан, то ведь уже не в наличии, при этом заказать нельзя?</div>
+       </div>
+
+               <!-- Sorting + View-->
+               <div class="d-sm-flex align-items-center justify-content-between pb-4 mb-2">
+                  <div class="d-flex align-items-center me-sm-4">
+                     <label class="fs-sm text-dark me-2 pe-1 text-nowrap" for="sorting1"><i
+                           class="fi-arrows-sort mt-n1 me-2"></i>Сортировка:</label>
+                     <select class="form-select form-select-dark form-select-sm me-sm-4" id="sorting1">
+                        <option>Новые</option>
+                        <option>Старые</option>
+                        <option>По возрастанию цены</option>
+                        <option>По убыванию цены</option>
+                     </select>
+                     <div class="d-none d-md-block border-end border-dark" style="height: 1.25rem;"></div>
+
+                  </div>
+                  <div class="d-none d-sm-flex"><a class="nav-link nav-link-dark px-2"
+                        href="catalog.html" data-bs-toggle="tooltip" aria-label="List view"
+                        data-bs-original-title="List view"><i class="fi-list"></i></a><a
+                        class="nav-link nav-link-dark px-2 active" href="car-finder-catalog-grid.html"
+                        data-bs-toggle="tooltip" aria-label="Grid view" data-bs-original-title="Grid view"><i
+                           class="fi-grid"></i></a></div>
+               </div>
+               <div class="row">
+                  <!--
+                  1) автодом (под заказ )
+                  2) прицеп  (под заказ )
+                  3) В наличии. автодом Статус (в наличии, в поставке, продан)
+                     <span class="d-table badge bg-success mb-1 fs-lg">В наличии</span>
+                     <span class="d-table badge bg-danger mb-1 fs-lg">Продан</span>
+                     <span class="d-table badge bg-warning mb-1 fs-lg">В поставке</span>
+                     <span class="d-table badge bg-info mb-1 fs-lg">Под заказ</span>
+                  4) В наличии. прицеп (в наличии, в поставке, продан)
+                  -->
+
+
+                  <!-- Автодом под заказ -->
+                  <div class="col-sm-6 mb-4">
+                     <div class="card card card-hover h-lg-100 mb-4 mb-lg-0">
+                        <div class="-ns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
+                              href="avtodom.html"></a>
+                           <div class="position-absolute start-0 top-0 pt-3 ps-3">
+                              <span class="d-table badge bg-info mb-1 fs-lg">Под заказ</span>
+                              <span class="d-table badge bg-success" data-bs-toggle="popover" data-bs-placement="bottom"
+                                 data-bs-trigger="hover" data-bs-html="true"
+                                 data-bs-content="<div class=&quot;d-flex&quot;><i class=&quot;fi-video mt-1 me-2&quot;></i><div>На этот автомобиль есть видео обзор</div></div>">Есть
+                                 видео обзор</span>
+                           </div>
+
+                           <div class="tns-carousel-wrapper">
+                              <div class="tns-carousel-inner"
+                                 data-carousel-options='{"loop": true, "gutter": 0, "items": 1}'>
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="d-flex align-items-center justify-content-between pb-1">
+
+                           </div>
+                           <h3 class="h6 mb-1"><a class="nav-link" href="avtodom.html">HYMER B-Class
+                                 MasterLine
+                                 I</a></h3>
+
+                           <ul class="list-unstyled">
+                              <li class="mb-2"><strong>Тип:</strong><span class="opacity-70 ms-1">Интеграл</span></li>
+                              <li class="mb-2"><strong>Год выпуска:</strong><span class="opacity-70 ms-1">2018</span>
+                              </li>
+                              <li class="mb-2"><strong>Привод:</strong><span class="opacity-70 ms-1">125000 км.</span>
+                              </li>
+                              <li class="mb-2"><strong>Кол-во спальных/сидячих мест:</strong><span
+                                    class="opacity-70 ms-1">4/5</span></li>
+                              <li class="mb-2"><strong>Коробка передач:</strong><span
+                                    class="opacity-70 ms-1">АКПП/РКПП</span>
+                              </li>
+
+                              <li class="mb-2"><strong>Масса:</strong><span class="opacity-70 ms-1">3500 кг.</span>
+                              </li>
+
+
+
+                           </ul>
+
+                           <div
+                              class="text-danger lead fw-bold mb-1 border-top pt-3 d-flex align-items-center justify-content-between">
+                              <span>Цена:</span>
+                              <span>$125,800</span>
+                           </div>
+                        </div>
+                        <div class="card-footer border-0 pt-0">
+                           <div class="border-top pt-3 d-flex align-items-center justify-content-between">
+                              <a href="" class="btn btn-outline-dark">Видео обзор</a>
+                              <a href="" class="btn btn-translucent-dark">Подробнее</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Прицеп под заказ -->
+                  <div class="col-sm-6 mb-4">
+                     <div class="card card card-hover h-lg-100 mb-4 mb-lg-0">
+                        <div class="-ns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
+                              href="avtodom.html"></a>
+                           <div class="position-absolute start-0 top-0 pt-3 ps-3">
+                              <span class="d-table badge bg-info mb-1 fs-lg">Под заказ</span>
+                              <span class="d-table badge bg-success" data-bs-toggle="popover" data-bs-placement="bottom"
+                                 data-bs-trigger="hover" data-bs-html="true"
+                                 data-bs-content="<div class=&quot;d-flex&quot;><i class=&quot;fi-video mt-1 me-2&quot;></i><div>На этот автомобиль есть видео обзор</div></div>">Есть
+                                 видео обзор</span>
+                           </div>
+
+                           <div class="tns-carousel-wrapper">
+                              <div class="tns-carousel-inner"
+                                 data-carousel-options='{"loop": true, "gutter": 0, "items": 1}'>
+                                 <img src="/img/pricep_1.jpg" alt="Image">
+                                 <img src="/img/pricep_2.jpg" alt="Image">
+                                 <img src="/img/pricep_3.jpg" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="d-flex align-items-center justify-content-between pb-1">
+
+                           </div>
+                           <h3 class="h6 mb-1"><a class="nav-link" href="avtodom.html">HYMER B-Class
+                                 MasterLine
+                                 I</a></h3>
+
+                           <ul class="list-unstyled">
+                              <li class="mb-2"><strong>Тип:</strong><span class="opacity-70 ms-1">Интеграл</span></li>
+                              <li class="mb-2"><strong>Год выпуска:</strong><span class="opacity-70 ms-1">2018</span>
+                              </li>
+                              <li class="mb-2"><strong>Пробег:</strong><span class="opacity-70 ms-1">125000 км.</span>
+                              </li>
+                              <li class="mb-2"><strong>Двигатель:</strong><span class="opacity-70 ms-1">2.2L Turbo 6
+                                    Cylinder</span></li>
+                              <li class="mb-2"><strong>Кол-во спальных/сидячих мест:</strong><span
+                                    class="opacity-70 ms-1">4/5</span></li>
+                              <li class="mb-2"><strong>Коробка передач:</strong><span
+                                    class="opacity-70 ms-1">АКПП/РКПП</span>
+                              </li>
+
+                              <li class="mb-2"><strong>Высота в салоне:</strong><span class="opacity-70 ms-1">198
+                                    см.</span>
+                              </li>
+                           </ul>
+
+                           <div
+                              class="text-danger lead fw-bold mb-1 border-top pt-3 d-flex align-items-center justify-content-between">
+                              <span>Цена:</span>
+                              <span>$125,800</span>
+                           </div>
+                        </div>
+                        <div class="card-footer border-0 pt-0">
+                           <div class="border-top pt-3 d-flex align-items-center justify-content-between">
+                              <a href="" class="btn btn-outline-dark">Видео обзор</a>
+                              <a href="" class="btn btn-translucent-dark">Подробнее</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Item-->
+                  <div class="col-sm-6 mb-4">
+                     <div class="card card card-hover h-lg-100 mb-4 mb-lg-0">
+                        <div class="-ns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
+                              href="avtodom.html"></a>
+                           <div class="position-absolute start-0 top-0 pt-3 ps-3">
+                              <span class="d-table badge bg-success mb-1 fs-lg">В наличии</span>
+                           </div>
+
+                           <div class="position-absolute end-0 bottom-0 pb-3 pe-3">
+
+                              <span class="d-table badge bg-success" data-bs-toggle="popover" data-bs-placement="bottom"
+                                 data-bs-trigger="hover" data-bs-html="true"
+                                 data-bs-content="<div class=&quot;d-flex&quot;><i class=&quot;fi-video mt-1 me-2&quot;></i><div>На этот автомобиль есть видео обзор</div></div>">Есть
+                                 видео обзор</span>
+                           </div>
+
+                           <div class="tns-carousel-wrapper">
+                              <div class="tns-carousel-inner"
+                                 data-carousel-options='{"loop": true, "gutter": 0, "items": 1}'>
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="d-flex align-items-center justify-content-between pb-1">
+
+                           </div>
+                           <h3 class="h6 mb-1"><a class="nav-link" href="avtodom.html">HYMER B-Class
+                                 MasterLine
+                                 I</a></h3>
+
+                           <ul class="list-unstyled">
+                              <li class="mb-2"><strong>Тип:</strong><span class="opacity-70 ms-1">Интеграл</span></li>
+                              <li class="mb-2"><strong>Год выпуска:</strong><span class="opacity-70 ms-1">2018</span>
+                              </li>
+                              <li class="mb-2"><strong>Пробег:</strong><span class="opacity-70 ms-1">125000 км.</span>
+                              </li>
+                              <li class="mb-2"><strong>Двигатель:</strong><span class="opacity-70 ms-1">2.2L Turbo 6
+                                    Cylinder</span></li>
+                              <li class="mb-2"><strong>Кол-во спальных/сидячих мест:</strong><span
+                                    class="opacity-70 ms-1">4/5</span></li>
+                              <li class="mb-2"><strong>Коробка передач:</strong><span
+                                    class="opacity-70 ms-1">АКПП/РКПП</span>
+                              </li>
+
+                              <li class="mb-2"><strong>Высота в салоне:</strong><span class="opacity-70 ms-1">198
+                                    см.</span>
+                              </li>
+                           </ul>
+
+                           <div
+                              class="text-danger lead fw-bold mb-1 border-top pt-3 d-flex align-items-center justify-content-between">
+                              <span>Цена:</span>
+                              <span>$125,800</span>
+                           </div>
+                        </div>
+                        <div class="card-footer border-0 pt-0">
+                           <div class="border-top pt-3 d-flex align-items-center justify-content-between">
+                              <a href="" class="btn btn-outline-dark">Видео обзор</a>
+                              <a href="" class="btn btn-translucent-dark">Подробнее</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Item-->
+                  <div class="col-sm-6 mb-4">
+                     <div class="card card card-hover h-lg-100 mb-4 mb-lg-0">
+                        <div class="-ns-carousel-wrapper card-img-top card-img-hover"><a class="img-overlay"
+                              href="avtodom.html"></a>
+                           <div class="position-absolute start-0 top-0 pt-3 ps-3"><span
+                                 class="d-table badge bg-dark mb-1 fs-lg">В
+                                 поставке</span><span class="d-table badge bg-success" data-bs-toggle="popover"
+                                 data-bs-placement="bottom" data-bs-trigger="hover" data-bs-html="true"
+                                 data-bs-content="<div class=&quot;d-flex&quot;><i class=&quot;fi-video mt-1 me-2&quot;></i><div>На этот автомобиль есть видео обзор</div></div>">Есть
+                                 видео обзор</span>
+                           </div>
+
+                           <div class="tns-carousel-wrapper">
+                              <div class="tns-carousel-inner"
+                                 data-carousel-options='{"loop": true, "gutter": 0, "items": 1}'>
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                                 <img src="/img/avtodom.png" alt="Image">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           <div class="d-flex align-items-center justify-content-between pb-1">
+
+                           </div>
+                           <h3 class="h6 mb-1"><a class="nav-link" href="avtodom.html">HYMER B-Class
+                                 MasterLine
+                                 I</a></h3>
+
+                           <ul class="list-unstyled">
+                              <li class="mb-2"><strong>Тип:</strong><span class="opacity-70 ms-1">Интеграл</span></li>
+                              <li class="mb-2"><strong>Год выпуска:</strong><span class="opacity-70 ms-1">2018</span>
+                              </li>
+                              <li class="mb-2"><strong>Пробег:</strong><span class="opacity-70 ms-1">125000 км.</span>
+                              </li>
+                              <li class="mb-2"><strong>Двигатель:</strong><span class="opacity-70 ms-1">2.2L Turbo 6
+                                    Cylinder</span></li>
+                              <li class="mb-2"><strong>Кол-во спальных/сидячих мест:</strong><span
+                                    class="opacity-70 ms-1">4/5</span></li>
+                              <li class="mb-2"><strong>Коробка передач:</strong><span
+                                    class="opacity-70 ms-1">АКПП/РКПП</span>
+                              </li>
+
+                              <li class="mb-2"><strong>Высота в салоне:</strong><span class="opacity-70 ms-1">198
+                                    см.</span>
+                              </li>
+                           </ul>
+
+                           <div
+                              class="text-danger lead fw-bold mb-1 border-top pt-3 d-flex align-items-center justify-content-between">
+                              <span>Цена:</span>
+                              <span>$125,800</span>
+                           </div>
+                        </div>
+                        <div class="card-footer border-0 pt-0">
+                           <div class="border-top pt-3 d-flex align-items-center justify-content-between">
+                              <a href="" class="btn btn-outline-dark">Видео обзор</a>
+                              <a href="" class="btn btn-translucent-dark">Подробнее</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <!-- Sorting + Pagination-->
+            <div class="d-flex align-items-center justify-content-between py-2">
+               <div class="d-flex align-items-center me-sm-4">
+                  <label class="fs-sm text-light me-2 pe-1 text-nowrap" for="sorting2"><i
+                        class="fi-arrows-sort mt-n1 me-2"></i>Сортировка:</label>
+                  <select class="form-select form-select-light form-select-sm me-2 me-sm-4" id="sorting2">
+                     <option>Новые</option>
+                     <option>Старые</option>
+                     <option>По возрастанию цены</option>
+                     <option>По убыванию цены</option>
+                  </select>
+
+               </div>
+               <nav aria-label="Pagination">
+                  <ul class="pagination pagination-dark mb-0">
+                     <li class="page-item d-sm-none text-nowrap"><span class="page-link page-link-static">1 /
+                           5</span></li>
+                     <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">1<span
+                              class="visually-hidden">(current)</span></span></li>
+                     <li class="page-item d-none d-sm-block"><a class="page-link" href="#">2</a></li>
+                     <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+                     <li class="page-item d-none d-sm-block">...</li>
+                     <li class="page-item d-none d-sm-block"><a class="page-link" href="#">8</a></li>
+                     <li class="page-item"><a class="page-link" href="#" aria-label="Next"><i
+                              class="fi-chevron-right"></i></a></li>
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+      </div>
+
+
+
+   </main>
+   <!-- Footer-->
+   <footer class="footer pt-lg-5 pt-4 bg-dark text-light">
+      <div class="container mb-4 py-4 pb-lg-5">
+         <div class="row gy-4">
+            <div class="col-lg-3 col-md-6 col-sm-4">
+               <div class="mb-4 pb-sm-3"><a class="d-inline-block text-light" href="/">PRIMCAMPER</a></div>
+
+               <p class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap"
+                     href="mailto:info@primecamper.ru"><i
+                        class="fi-mail mt-n1 me-1 align-middle text-light"></i>info@primecamper.ru</a></p>
+               <p class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap"
+                     href="tel:+79991112233"><i class="fi-device-mobile mt-n1 me-1 align-middle text-light"></i>+7 (406)
+                     555-0120</a></p>
+
+            </div>
+            <!-- Links-->
+            <div class="col-lg-2 col-md-3 col-sm-4">
+               <h3 class="fs-base text-light">Услуги</h3>
+               <ul class="list-unstyled fs-sm">
+                  <li><a class="nav-link-light" href="#">Покупка</a></li>
+                  <li><a class="nav-link-light" href="#">В аренду</a></li>
+                  <li><a class="nav-link-light" href="#">Аксессуары</a></li>
+                  <li><a class="nav-link-light" href="#">Кемпинги</a></li>
+               </ul>
+            </div>
+            <!-- Links-->
+            <div class="col-lg-2 col-md-3 col-sm-4">
+               <h3 class="fs-base text-light">Важная информация</h3>
+               <ul class="list-unstyled fs-sm">
+                  <li><a class="nav-link-light" href="#">Контакты</a></li>
+                  <li><a class="nav-link-light" href="#">Вопросы и ответы</a></li>
+                  <li><a class="nav-link-light" href="#">Условия аренды</a></li>
+                  <li><a class="nav-link-light" href="#">Политика конфиденциальности</a></li>
+               </ul>
+            </div>
+            <!-- Subscription form-->
+            <div class="col-lg-4 offset-lg-1">
+               <p>© 2008-2023 ООО «PRIMECAMPER»</p>
+               <!-- Copyright-->
+               <p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0"><span class="text-light opacity-60">Копирование
+                     материалов с сайта запрещено </span></p>
+            </div>
+         </div>
+      </div>
+      <div class="py-4 border-top border-light">
+         <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between py-2">
+            <div class="d-flex align-items-center">
+               <p class="small">
+                  * Обращаем ваше внимание на то, что данный Интернет сайт носит исключительно информационный характер и
+                  ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского
+                  кодекса Российской Федерации. Для получения подробной информации о стоимости оборудования и запасных
+                  частей, пожалуйста, обращайтесь к менеджерам по продажам.
+               </p>
+
+            </div>
+
+         </div>
+      </div>
+   </footer>
+   <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span
+         class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up">
+      </i></a>
+   <!-- Vendor scrits: js libraries and plugins-->
+   <script src="/dist/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="/dist/vendor/simplebar/dist/simplebar.min.js"></script>
+   <script src="/dist/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+   <script src="/dist/vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+   <script src="/dist/vendor/flatpickr/dist/flatpickr.min.js"></script>
+   <script src="/dist/vendor/cleave.js/dist/cleave.min.js"></script>
+   <!-- Main theme script-->
+   <script src="/js/theme.js"></script>
+</body>
+
+</html>
